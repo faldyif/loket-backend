@@ -32,7 +32,7 @@ class TransactionController extends Controller
      */
     public function index()
     {
-        return response()->json($this->transaction->all());
+        return response()->json($this->transaction->with(['customer', 'ticketTypes'])->get());
     }
 
     /**
