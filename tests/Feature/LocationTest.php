@@ -25,5 +25,6 @@ class LocationTest extends TestCase
         ];
         $this->post(url('location/create'), $data)
             ->assertStatus(201);
+        $this->assertDatabaseHas('locations', $data);
     }
 }

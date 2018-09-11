@@ -20,6 +20,7 @@ class EventTest extends TestCase
         ];
         $this->post(url('location/create'), $data)
             ->assertStatus(201);
+        $this->assertDatabaseHas('locations', $data);
 
         // create event
         $data = [
@@ -31,5 +32,6 @@ class EventTest extends TestCase
         ];
         $this->post(url('event/create'), $data)
             ->assertStatus(201);
+        $this->assertDatabaseHas('events', $data);
     }
 }
