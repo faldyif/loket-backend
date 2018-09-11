@@ -8,7 +8,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class EventTest extends TestCase
 {
-    public function testCreateNewLocationAndEvent()
+    public function testCreateNewEvent()
     {
         // create location
         $data = [

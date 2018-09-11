@@ -13,7 +13,7 @@ class LocationTest extends TestCase
      *
      * @return void
      */
-    public function testCreateLocation()
+    public function testCreateNewLocation()
     {
         // create location
         $data = [
