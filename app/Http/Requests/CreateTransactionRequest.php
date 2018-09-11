@@ -24,7 +24,13 @@ class CreateTransactionRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'customer.name' => 'required|between:5,100',
+            'customer.email' => 'required|between:5,100',
+            'customer.phone' => 'required|between:5,100',
+            'customer.address' => 'required|between:5,150',
+            'event_id' => 'exists:events,id',
+            'ticket_types.*.ticket_type_id' => 'exists:ticket_types,id',
+            'ticket_types.*.quantity' => 'required|min:1'
         ];
     }
 }
