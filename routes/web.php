@@ -18,4 +18,5 @@ Route::get('/', function () {
 Route::post('location/create', 'LocationController@store');
 Route::post('event/create', 'EventController@store');
 Route::get('event/get_info', 'EventController@index');
+Route::post('transaction/purchase', 'TransactionController@store');
 Route::post('event/ticket/create', 'TicketTypeController@store');
