@@ -15,10 +15,11 @@ class CreateTransactionDetailsTable extends Migration
     {
         Schema::create('transaction_details', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('transaction_id');
+            $table->foreign('transaction_id')->references('id')->on('transactions')->onDelete('cascade');
             $table->unsignedInteger('ticket_type_id');
             $table->foreign('ticket_type_id')->references('id')->on('ticket_types')->onDelete('cascade');
             $table->integer('quantity');
-            $table->double('total_price'); // for caching
             $table->timestamps();
         });
     }

@@ -19,7 +19,7 @@ class CreateTransactionsTable extends Migration
             $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
             $table->unsignedInteger('event_id');
             $table->foreign('event_id')->references('id')->on('events')->onDelete('cascade');
-            $table->double('total_price'); // for caching
+            $table->double('total_price')->default(0); // for caching
             $table->timestamps();
         });
     }
