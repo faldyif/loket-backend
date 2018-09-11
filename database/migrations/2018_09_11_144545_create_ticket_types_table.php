@@ -16,6 +16,7 @@ class CreateTicketTypesTable extends Migration
         Schema::create('ticket_types', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('event_id');
+            $table->string('name');
             $table->foreign('event_id')->references('id')->on('events')->onDelete('cascade');
             $table->integer('sold')->default(0); // for caching
             $table->integer('quota');

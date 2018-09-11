@@ -26,7 +26,8 @@ class CreateTicketTypeRequest extends FormRequest
         return [
             'event_id' => 'required|exists:events,id',
             'quota' => 'required|integer',
-            'price' => 'required|numeric'
+            'price' => 'required|numeric',
+            'name' => 'required|min:1'
         ];
     }
 }

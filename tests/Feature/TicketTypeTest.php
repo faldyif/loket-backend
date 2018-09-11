@@ -41,6 +41,7 @@ class TicketTypeTest extends TestCase
 
         // create ticket type
         $ticketTypeData = [
+            'name' => 'VIP',
             'event_id' => 1,
             'quota' => $this->faker->numberBetween(1, 5000),
             'price' => $this->faker->numberBetween(20000, 100000000)
