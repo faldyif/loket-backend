@@ -17,7 +17,7 @@ class CreateTicketTypeRequest extends FormRequest
     }
 
     /**
-     * Get the validation rules that apply to the request.
+     * Get the validaion rules that apply to the request.
      *
      * @return array
      */

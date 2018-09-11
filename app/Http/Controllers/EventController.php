@@ -26,6 +26,16 @@ class EventController extends Controller
     }
 
     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        return response()->json($this->event->newQuery()->with(['location', 'ticketTypes'])->get());
+    }
+
+    /**
      * Store a newly created resource in storage.
      *
      * @param CreateEventRequest $request
@@ -35,16 +45,5 @@ class EventController extends Controller
     {
         $this->event->create($request->all());
         return response()->json([], 201);
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        return response()->json($this->event->find($id));
     }
 }
