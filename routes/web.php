@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::post('event/create', 'EventController@store');
+Route::post('location/create', 'LocationController@store');
