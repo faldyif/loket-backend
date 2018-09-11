@@ -16,15 +16,15 @@ class LocationTest extends TestCase
     public function testCreateNewLocation()
     {
         // create location
-        $data = [
+        $locationData = [
             'name' => 'Gedung ' . title_case($this->faker->words(2, true)),
             'city' => $this->faker->city,
             'address' => $this->faker->address,
             'latitude' => $this->faker->latitude,
             'longitude' => $this->faker->longitude
         ];
-        $this->post(url('location/create'), $data)
+        $this->post(url('location/create'), $locationData)
             ->assertStatus(201);
-        $this->assertDatabaseHas('locations', $data);
+        $this->assertDatabaseHas('locations', $locationData);
     }
 }
