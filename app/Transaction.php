@@ -45,6 +45,10 @@ class Transaction extends Model
         foreach ($data as $key) {
             $key['transaction_id'] = $transaction_id;
             $transactionDetail = TransactionDetail::create($key);
+
+            $ticketType = TicketType::find($key['ticket_type_id']);
+            $ticketType->sold += $key['quantity'];
+
             $totalPrice += $transactionDetail->price;
         }
 
